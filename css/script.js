@@ -64,7 +64,16 @@ task_box.appendChild(deleteButtonEle);
 task_list.appendChild(task_box);
 
 inputEle.value = "";
- 
+    //function to save the edited task
+ function savedEle(){
+    let taskEdit = inputEle2.value; //here we save the edited task
+for (let key of keys){
+    if(localStorage.getItem(key) == task){
+        localStorage.setItem(key, taskEdit);
+        task = taskEdit;
+    }
+}
+}
 //checkbox-clicked
 
 inputEle1.addEventListener("click", function(){
@@ -85,7 +94,7 @@ editButtonEle.addEventListener("click",function editBtn(){
 
 //save button clicked
     editButtonEle.addEventListener("click",function(){
-    
+     savedEle();
     for (let key of keys){
         let taskEdit = inputEle2.value; //here we save the edited task
         if(localStorage.getItem(key) == task){
