@@ -94,7 +94,7 @@ editButtonEle.addEventListener("click",function editBtn(){
 
 //save button clicked
     editButtonEle.addEventListener("click",function(){
-     savedEle();
+     savedEle()
     for (let key of keys){
         let taskEdit = inputEle2.value; //here we save the edited task
         if(localStorage.getItem(key) == task){
